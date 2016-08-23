@@ -1,4 +1,4 @@
-function cameg_datapre_updatesurf()
+function cameg_datapre_updatesurf(idxp, m, c, L, d, aflux, newPosMNI)
 % ___________________________________________________________________________
 % Connectivity analysis of MEG data (CA-MEG)
 %
@@ -11,8 +11,8 @@ function cameg_datapre_updatesurf()
 % ___________________________________________________________________________
 disp('Updating surface data ...')
 
-load([pwd,'\saved outputs\cameg_surffile.mat']);
-load([pwd,'\saved outputs\cameg_matfile.mat']);
+% load([pwd,'\saved outputs\cameg_surffile.mat']);
+% load([pwd,'\saved outputs\cameg_matfile.mat']);
 
 newPosMNI = newPosMNI(idxp,:);
 m = m(idxp);

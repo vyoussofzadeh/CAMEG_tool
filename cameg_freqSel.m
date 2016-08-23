@@ -76,7 +76,7 @@ disp('---------------------');
 
 figure(fh+4);
 subplot 312
-plot_conn(p{1,in2},[], 'npsi'); title(['P value of ',label{i}]);
+plot_conn(p{1,in2},[], 'npsi'); title(['P value of ',FB]);
 set(gca,'ytick', 1:L,'ytickLabel',num2cell(1:L));
 set(gca,'xtick', 1:L,'xtickLabel',num2cell(1:L));
 
@@ -86,17 +86,14 @@ sedge = edge{1,in2} .* double(p{1,in2} < 5e-2);
 % sedge = sedge > 0;
 figure(fh+4);
 subplot 313
-plot_conn(sedge,[], 'npsi'); title(['Thresholded value of ',label{i}]);
+plot_conn(sedge,[], 'npsi'); title(['Thresholded value of ',FB]);
 set(gca,'ytick', 1:L,'ytickLabel',num2cell(1:L));
 set(gca,'xtick', 1:L,'xtickLabel',num2cell(1:L));
 
 set(gcf, 'Position', [600   200   500   1000]);
 % sedge = sedge > 0;
-dlmwrite([pwd,'\saved outputs\edge.edge'],sedge,'\t');
+% dlmwrite([pwd,'\saved outputs\edge.edge'],sedge,'\t');
 save([pwd,'\saved outputs\cameg_matfile.mat'], 'sedge','aflux','idxp','ssROI');
-
-%% Updating surface file
-cameg_datapre_updatesurf;
 
 in = input('close the openned figures (yes = 1)?');
 if in == 1

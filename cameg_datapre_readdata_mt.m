@@ -75,7 +75,7 @@ else
     sValue = mValue;
 end
 %% informed by CT
-in2 = input('informed by CT (yes = 1)?');
+in2 = input('informing by CT (yes = 1)?');
 if in2 ==1
     load([pwd,'\saved outputs\cameg_CT_all.mat']);
     sROI = ROI(idxp,:);
@@ -100,7 +100,7 @@ else
     idxp = 1:L;
 end
 %% Spectral analysis
-in3 = input('informed by PSD (yes = 1)?');
+in3 = input('informing by PSD (yes = 1)?');
 for i = 1:size(ssValue,1)
     parfor j = 1:size(ssValue,2)
         x = squeeze(ssValue(i,j,:));
@@ -109,7 +109,6 @@ for i = 1:size(ssValue,1)
 end
 mpxx = squeeze(mean(pxx,1));
 if in3 == 1
-    
     h2 = figure;
     plot(10*log10(mpxx(:,2:29)'));
     title('PSD');
@@ -133,6 +132,7 @@ else
     ssValue_roi = ssValue;
     ssROI = sROI;
     idxp = 1:L;
+    nroi = L;
 end
 %%
 save([pwd,'\saved outputs\cameg_datafile.mat'], 'files', 'Atlas', 'fs', 'ssValue','ssValue_roi', 'Time', 'idxp','sROI','ssROI', 'mt','mpxx','nroi');

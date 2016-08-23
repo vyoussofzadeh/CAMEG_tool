@@ -10,8 +10,8 @@ function cameg_ceredit()
 % email: Vahab.Youssofzadeh@cchmc.org
 % ___________________________________________________________________________
 
-credit = ['CAMEG was written by, Vahab YoussofZadeh              ';
-          'At, Cincinnati Childrens Hospital Medical Center ';
-          'Email, vahab.youssofzadeh@cchmc.org              '];
+credit = ['CAMEG was written by Vahab YoussofZadeh   ...                      ';
+          'at, Cincinnati Childrens Hospital Medical Center.                  ';
+          'pelase contact via vahab.youssofzadeh@cchmc.org for more queries!  '];
 
 display(credit)

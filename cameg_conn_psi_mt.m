@@ -1,4 +1,4 @@
-function cameg_conn_psi_mt(Value)
+function cameg_conn_psi_mt()
 % ___________________________________________________________________________
 % Connectivity analysis of MEG data (CA-MEG)
 %

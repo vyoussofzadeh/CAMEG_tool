@@ -19,5 +19,8 @@ if mt == 1
 elseif mt == 2
     display('Averaged or single trial data ...'); pause(1)
     cameg_conn_psi_ave
+elseif mt == 3
+    display('Multi-subject multi trial data ...'); pause(1)
+    cameg_conn_psi_gs
 end
 
