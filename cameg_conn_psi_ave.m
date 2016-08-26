@@ -18,9 +18,10 @@ frq{1} = 2:4;
 frq{2} = 4:7;
 frq{3} = 8:13;
 frq{4} = 15:29;
-frq{5} = 2:29;
+frq{5} = 30:70;
+frq{6} = 1:13;
 % 
-label = {'Delta (2-4)','Theta (4-7)','Alpha (8-13)','Beta (15-29)','Whole range freq (1-29)'};
+label = {'Delta (2-4)','Theta (4-7)','Alpha (8-13)','Beta (15-29)','Gamma (30-70)','Custom (1-13)'};
 
 % ntrl = size(ssValue_roi,1);
 ns   = size(ssValue_roi,1); % number of sources

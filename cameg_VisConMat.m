@@ -11,16 +11,26 @@ function cameg_VisConMat()
 % ___________________________________________________________________________
 
 load([pwd,'\saved outputs\cameg_matfile.mat']);
+
+[LH, RH] = cameg_LHRHdet(ssROI);
+fsedge   = [sedge(LH,LH), sedge(LH,RH); sedge(RH,LH), sedge(RH,RH)];
+flabel = ssROI.Regions([LH,RH]);
+
 figure;
-plot_conn(sedge,[],'Conn mat'); 
+plot_conn(sedge,[],'Conn mat');
+axis square
 L = length(sedge);
-set(gca,'ytick', 1:L,'ytickLabel',num2cell(1:L));
-set(gca,'xtick', 1:L,'xtickLabel',num2cell(1:L));
+set(gca,'ytick', 1:L,'ytickLabel',flabel);
+set(gca,'xtick', 1:L,'xtickLabel',flabel);
+set(gcf, 'Position', [900   200   900   900]);
 
 
 sedge = (sedge.* double(sedge > 0.7.*max(max(sedge))));
 figure;
 plot_conn(sedge,[],'Thresholded conn mat'); 
 L = length(sedge);
-set(gca,'ytick', 1:L,'ytickLabel',num2cell(1:L));
-set(gca,'xtick', 1:L,'xtickLabel',num2cell(1:L));
+axis square
+set(gca,'ytick', 1:L,'ytickLabel',flabel);
+set(gca,'xtick', 1:L,'xtickLabel',flabel);
+set(gcf, 'Position', [900   200   900   900]);
+disp('---------------------');

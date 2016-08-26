@@ -30,12 +30,15 @@ for i = 1:size(frq,2)
 end
 disp('---------------------');
 
+
+
 display('1: Delta (2-4)');
 display('2: Theta (4-7)');
 display('3: Alpha (8-13)');
 display('4: Beta (15-29)');
-display('5: Whole range (1-29)');
-in2  = input('freq band selection (1-5):');
+display('5: Gamma(30-70)');
+display('6: Custom(1-13)');
+in2  = input('freq band selection (1-6):');
 disp('-----------------------------------')
 % sig = input('Set the sig level? ');
 

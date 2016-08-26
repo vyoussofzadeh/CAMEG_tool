@@ -18,6 +18,10 @@ p1 = plot(10*log10(mpxx(:,2:29)'));
 title('PSD');
 for i = 1:L, lab{i} = num2str(i); end
 clickableLegend(p1,lab, 'plotOptions', {'MarkerSize', 6});
+box off
+set(gca,'color','none');
+xlim([2,29])
+set(gcf, 'Position', [950   100   700   1200]);
 
 mmpxx = squeeze(mean(mpxx(:,2:29),2));
 figure(fh+2);
@@ -26,16 +30,18 @@ for j = 1:L, lab{j} = num2str(j); end
 set(gca,'color','none');
 title('PSD ');
 set(gca,'ytick', 1:L,'ytickLabel',num2cell(1:L));
-box off
 
 [~, idxp] = sort(mmpxx, 'descend');
 idxp = idxp(1:nroi);
 
-figure(fh+1);
-hold on 
-plot(10*log10(mpxx(idxp,2:29)'),'LineWidth',4);
-set(gcf, 'Position', [950   100   700   1200]);
-xlim([2,29])
+% figure(fh+1);
+% hold on
+% plot(10*log10(mpxx(idxp,2:29)'),'LineWidth',4);
+% set(gcf, 'Position', [950   100   700   1200]);
+% % clickableLegend(hl,lab, 'plotOptions', {'MarkerSize', 6});
+% box off
+% set(gca,'color','none');
+% xlim([2,29])
 
 figure(fh+2);
 sig_mmpxx = zeros(1,length(mmpxx));
@@ -45,6 +51,7 @@ h = barh(sig_mmpxx);
 set(h, 'FaceColor', 'r')
 set(gcf, 'Position', [200   100   700   1200]);
 legend('PSD power','PSD power (ROIs)');
+box off
 
 id = table([1:nroi]','VariableNames',{'id'});
 C = [id,ssROI]

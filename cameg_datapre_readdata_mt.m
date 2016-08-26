@@ -49,6 +49,9 @@ set(gcf, 'Position', [800   100   1200   800]);
 
 B = num2cell(1:L);
 ROI = (cell2table([B;roi;roi_l]'))
+ROI.Properties.VariableNames{'Var1'} = 'ROI';
+ROI.Properties.VariableNames{'Var2'} = 'Label';
+ROI.Properties.VariableNames{'Var3'} = 'Regions';
 
 % pause
 %% Segmenting data
